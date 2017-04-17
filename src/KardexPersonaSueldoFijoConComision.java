@@ -3,8 +3,8 @@ public class KardexPersonaSueldoFijoConComision extends Persona {
 	double sueldoFijo;
 	double porcentajeComision;
 	
-	KardexPersonaSueldoFijoConComision(String nombre, String apellido, String direccion, String cargo) {
-		super(nombre, apellido, direccion, cargo);
+	KardexPersonaSueldoFijoConComision(String nombre, String direccion, String cargo) {
+		super(nombre, direccion, cargo);
 		// TODO Auto-generated constructor stub
 	}
 	

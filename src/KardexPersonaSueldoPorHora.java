@@ -2,8 +2,8 @@
 public class KardexPersonaSueldoPorHora extends Persona{
 	double salarioPorHora;
 
-	KardexPersonaSueldoPorHora(String nombre, String apellido, String direccion, String cargo) {
-		super(nombre, apellido, direccion, cargo);
+	KardexPersonaSueldoPorHora(String nombre, String direccion, String cargo) {
+		super(nombre, direccion, cargo);
 		// TODO Auto-generated constructor stub
 	}
 	

@@ -1,14 +1,12 @@
 
 public class Persona {
 	String nombre;
-	String apellido;
 	String direccion;
 	String cargo;
 	MostrarFechaDePago diaDePago=null;
 	
-	Persona(String nombre, String apellido, String direccion, String cargo){
+	Persona(String nombre, String direccion, String cargo){
 		this.nombre=nombre;
-		this.apellido=apellido;
 		this.direccion=direccion;
 		this.cargo=cargo;
 	}
@@ -37,7 +35,7 @@ public class Persona {
 	}
 	
 	String devolverNombreCompleto(){
-		return (nombre+ " " + apellido);
+		return (nombre);
 	}
 	
 	String devolverCargo(){

@@ -2,8 +2,8 @@
 public class KardexPersonaSueldoFijo extends Persona{
 	double sueldoFijo;
 	
-	KardexPersonaSueldoFijo(String nombre, String apellido, String direccion, String cargo) {
-		super(nombre, apellido, direccion, cargo);
+	KardexPersonaSueldoFijo(String nombre, String direccion, String cargo) {
+		super(nombre, direccion, cargo);
 		// TODO Auto-generated constructor stub
 	}
 	
