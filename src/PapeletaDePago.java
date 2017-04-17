@@ -7,6 +7,21 @@ public class PapeletaDePago {
 	ArrayList <KardexPersonaSueldoFijo> listaPersonaSueldoFijo = new ArrayList<KardexPersonaSueldoFijo>();
 	ArrayList <KardexPersonaSueldoFijoConComision> listaPersonaSueldoFijoConComision = new ArrayList<KardexPersonaSueldoFijoConComision>();
 	
+	void agregarPersonaAListaPersonaSueldoFijo (KardexPersonaSueldoFijo persona){
+		listaPersonaSueldoFijo.add(persona);
+	}
+	
+	void quitarPersonaAListaPersonaSueldoFijo (KardexPersonaSueldoFijo persona){
+		listaPersonaSueldoFijo.remove(persona);
+	}
+	
+	void agregarPersonaAListaPersonaSueldoFijoYComision (KardexPersonaSueldoFijoConComision persona){
+		listaPersonaSueldoFijoConComision.add(persona);
+	}
+	
+	void quitarPersonaAListaPersonaSueldoFijoYComision (KardexPersonaSueldoFijoConComision persona){
+		listaPersonaSueldoFijoConComision.remove(persona);
+	}
 	
 	void agregarPersonaAListaPersonaPorHora (KardexPersonaSueldoPorHora persona){
 		listaPersonaPorHora.add(persona);
@@ -45,14 +60,30 @@ public class PapeletaDePago {
 		for(KardexPersonaSueldoPorHora persona : listaPersonaPorHora){
 			if(nombreCompletoTrabajador == persona.devolverNombreCompleto()){
 				sueldo=persona.calcularSalarioPorHorasTrabajadas(horas);
-				System.out.println("Ingrese al bucle");
 				
 			}
 		}
 		return sueldo;
 	}
 	
-	
+	double pagarPorSueldoFijoYComision(String nombreCompletoTrabajador){
+		double sueldo=0.0;
+		double montoTotalVendido = 0.0;
+		for(ReciboDeVenta recibo : listaDeRecibo){
+			if(nombreCompletoTrabajador== recibo.nombreVendedor){
+				montoTotalVendido += recibo.getMonto();
+			}
+		}
+		
+		for(KardexPersonaSueldoFijoConComision persona : listaPersonaSueldoFijoConComision){
+			if(nombreCompletoTrabajador == persona.devolverNombreCompleto()){
+				sueldo=persona.CalcularSueldo(montoTotalVendido);
+				
+			}
+		}
+		return sueldo;
+		
+	}
 	
 
 }
